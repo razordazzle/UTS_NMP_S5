@@ -1,5 +1,4 @@
 package com.example.uts_nmp
-
 data class Student(
     val nrp: String,
     val nama: String,
@@ -7,15 +6,13 @@ data class Student(
     val deskripsi: String,
     val foto: String,
 )
-
-private val students = listOf(
+private val students=listOf(
         Student(
             nrp = "160422001",
             nama = "Aditya Pratama",
             jurusan = "Teknik Informatika",
             deskripsi = "Memiliki minat pada pengembangan AI dan machine learning.",
             foto = "adityapratama.jpg"
-
         ),
         Student(
             nrp = "160422015",
@@ -39,7 +36,4 @@ private val students = listOf(
             foto = "rinamaulina.jpg"
         )
     )
-
-    fun getStudents(): List<Student> {
-        return students
-    }
+    fun getStudents():List<Student>{return students}

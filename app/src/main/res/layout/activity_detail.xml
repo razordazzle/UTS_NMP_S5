@@ -2,13 +2,11 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
     <LinearLayout
         android:padding="16dp"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
         <ImageView
             android:id="@+id/imgDetailFoto"
             android:layout_width="150dp"
@@ -17,23 +15,18 @@
             android:scaleType="centerCrop"
             android:src="@drawable/ic_person_placeholder"
             android:layout_marginBottom="16dp"/>
-
         <TextView
             android:id="@+id/txtDetailNama"
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
-
         <TextView
             android:id="@+id/txtDetailNRP"
             android:textSize="16sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"/>
-
-        <!-- Spinner -->
-
         <Spinner
             android:id="@+id/spinnerInfo"
             android:layout_width="match_parent"
@@ -42,7 +35,6 @@
             android:minWidth="48dp"
             android:padding="8dp"
             android:layout_marginBottom="8dp"/>
-
         <TextView
             android:id="@+id/txtParagraph"
             android:layout_width="match_parent"
@@ -50,44 +42,36 @@
             android:padding="8dp"
             android:text="Pilih informasi dari spinner di atas."
             android:layout_marginBottom="16dp"/>
-
-        <!-- Radio Button -->
         <RadioGroup
             android:id="@+id/radioGroupProgram"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
             <RadioButton
                 android:id="@+id/radioTI"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Teknik Informatika"/>
-
             <RadioButton
                 android:id="@+id/radioSI"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sistem Informasi"/>
-
             <RadioButton
                 android:id="@+id/radioDKV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Desain Komunikasi Visual"/>
-
             <RadioButton
                 android:id="@+id/radioMB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Manajemen Bisnis"/>
         </RadioGroup>
-
         <Button
             android:id="@+id/btnRequestFriend"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Request Friend" />
-
     </LinearLayout>
 </ScrollView>
