@@ -2,6 +2,7 @@ package com.example.uts_nmp
 
 import android.os.Bundle
 import android.widget.*
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 
 class DetailActivity : AppCompatActivity() {
@@ -16,6 +17,7 @@ class DetailActivity : AppCompatActivity() {
         val spinner = findViewById<Spinner>(R.id.spinnerInfo)
         val txtParagraph = findViewById<TextView>(R.id.txtParagraph)
         val radioGroup = findViewById<RadioGroup>(R.id.radioGroupProgram)
+        val btnRequest = findViewById<Button>(R.id.btnRequestFriend)
 
         // Ambil data dari Intent
         val nama = intent.getStringExtra("NAMA") ?: ""
@@ -60,12 +62,21 @@ class DetailActivity : AppCompatActivity() {
             override fun onNothingSelected(parent: AdapterView<*>) {}
         }
 
-        // Radio button otomatis sesuai program
         when (jurusan) {
             "Teknik Informatika" -> radioGroup.check(R.id.radioTI)
             "Sistem Informasi" -> radioGroup.check(R.id.radioSI)
             "Desain Komunikasi Visual" -> radioGroup.check(R.id.radioDKV)
             "Manajemen Bisnis" -> radioGroup.check(R.id.radioMB)
+        }
+
+        btnRequest.setOnClickListener {
+            FriendManager.totalFriends++
+
+            AlertDialog.Builder(this)
+                .setTitle("Request Friend")
+                .setMessage("Sukses tambah $nama sebagai friend.\nFriend anda sekarang adalah ${FriendManager.totalFriends}.")
+                .setPositiveButton("OK", null)
+                .show()
         }
     }
 }
