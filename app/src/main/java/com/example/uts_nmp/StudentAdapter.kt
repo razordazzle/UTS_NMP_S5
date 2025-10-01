@@ -28,6 +28,7 @@ import androidx.recyclerview.widget.RecyclerView
 
             holder.nameTextView.text = student.nama
             holder.nrpTextView.text = student.nrp
+
             val context = holder.itemView.context
             if (student.foto.isNotEmpty()) {
                 val resourceId = context.resources.getIdentifier(
@@ -43,6 +44,16 @@ import androidx.recyclerview.widget.RecyclerView
                 }
             } else {
                 holder.fotoImageView.setImageResource(R.drawable.ic_person_placeholder)
+            }
+
+            holder.itemView.setOnClickListener {
+                val intent = android.content.Intent(context, DetailActivity::class.java)
+                intent.putExtra("NAMA", student.nama)
+                intent.putExtra("NRP", student.nrp)
+                intent.putExtra("JURUSAN", student.jurusan)
+                intent.putExtra("DESKRIPSI", student.deskripsi)
+                intent.putExtra("FOTO", student.foto)
+                context.startActivity(intent)
             }
         }
 }
